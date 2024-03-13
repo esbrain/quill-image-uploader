@@ -21,7 +21,8 @@ class ImageUploader {
         this.handlePaste = this.handlePaste.bind(this);
 
         this.quill.root.addEventListener("drop", this.handleDrop, false);
-        this.quill.root.addEventListener("paste", this.handlePaste, false);
+        // Wordなどからペーストするとclipboardに画像が含まれ、自動的に送信してしまうため中止
+        // this.quill.root.addEventListener("paste", this.handlePaste, false);
     }
 
     selectLocalImage() {
